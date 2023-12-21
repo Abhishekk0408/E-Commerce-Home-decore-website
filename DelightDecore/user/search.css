@@ -1,0 +1,73 @@
+/* Style for the product search results */
+.container {
+    margin-top: 20px;
+}
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-section {
+    width: 48%; /* Adjust the width as needed */
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.product-section:hover {
+    transform: scale(1.03);
+}
+
+.product {
+    text-align: center;
+}
+
+.product-title {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #007BFF;
+}
+
+/* Style for the "Add to Cart" button */
+.btn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Style for messages */
+.message {
+    background-color: #28a745; /* Green color */
+    color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message i {
+    cursor: pointer;
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 768px) {
+    .product-section {
+        width: 100%;
+    }
+}

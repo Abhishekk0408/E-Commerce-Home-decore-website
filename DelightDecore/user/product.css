@@ -1,0 +1,124 @@
+.templeproduct{
+  padding: 50px 100px; 
+}
+
+.woodentempleheading1{
+  padding-top: 20px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bolder;
+  letter-spacing: 0.2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+.product-section { 
+
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.product-section{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+/* Set a fixed width and height for the product boxes */
+.product {
+  width: 300px;
+  height: auto;
+  background-color: #ffffff;
+  margin-right: 20px;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.card-img-top{
+max-width: 100%;
+height: 250px;
+}
+
+/* Center the product title and price */
+.product-title {
+font-size: 18px;
+text-align: center;
+margin: 0; /* Remove margin to center vertically */
+}
+
+.product-price {
+font-size: 20px;
+color: #000000;
+text-align: center;
+margin-bottom: 10px;
+}
+
+/* Center the Add to Cart button horizontally */
+.btnn {
+  display: initial;
+  width: 50%;
+  text-align: center;
+  background-color: #201e6d;
+  color: var(--white);
+  font-size: 1.7rem;
+  padding: 1.2rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+
+.product-description {
+font-size: 14px;
+color: #555;
+text-align: center; /* Center the description */
+}
+
+/* Style for the product search results */
+.container {
+  margin-top: 20px;
+}
+
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    position: relative;
+}
+
+.message span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.message i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #721c24;
+}
+
+
+/* Adjustments for responsiveness */
+@media (max-width: 768px) {
+  .product-section {
+      width: 100%;
+  }
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Payment </title>
+  
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    header {
+      width: 100vw;
+      min-height: 100vh;
+      background: #34495e;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: white;
+      max-width: 800px;
+      min-height: 500px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0.5rem 1.5rem;
+    }
+
+    .left {
+      flex-basis: 50%;
+    }
+
+    .right {
+      flex-basis: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .cash-on-button {
+      width: 50%;
+      padding: 0.5rem 1rem;
+      background: #202759;
+      color: white;
+      border: none;
+      outline: none;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+
+    .cash-on-button:hover {
+      background: #219a52;
+    }
+
+    h3 {
+      margin-top: 2rem;
+      color: #2c3e50;
+    }
+
+    label[for="cvv"] {
+      padding-left: 100px;
+    }
+
+    form {
+      padding: 1rem;
+    }
+
+    form input[type="text"] {
+      width: 100%;
+      padding: 0.5rem 0.7rem;
+      margin: 0.5rem 0;
+      outline: none;
+    }
+
+    #zip {
+      display: flex;
+      margin-top: 0.5rem;
+      justify-content: space-evenly;
+    }
+
+    #zip select {
+      padding: 0.5rem 0.7rem;
+    }
+
+    #zip input[type="number"] {
+      padding: 0.5rem 0.7rem;
+      margin-left: 5px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 0.7rem 1.5rem;
+      background: #34495e;
+      color: white;
+      border: none;
+      outline: none;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background: #2c3e50;
+    }
+
+    @media only screen and (max-width: 770px) {
+      .container {
+        flex-direction: column;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+    }
+  </style>
+<script>
+  function validateForm() {
+    var creditCardNumber = document.forms["paymentForm"]["credit_card_number"].value;
+    var expiryMonth = document.forms["paymentForm"]["expiry_month"].value;
+    var cvv = document.forms["paymentForm"]["cvv"].value;
+
+    // Credit card number validation (simple check for 16 digits)
+    if (creditCardNumber.length !== 16 || isNaN(creditCardNumber)) {
+      alert("Please enter a valid 16-digit credit card number.");
+      return false;
+    }
+
+    // Expiry month validation (simple check for MM/YY format)
+    if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(expiryMonth)) {
+      alert("Please enter a valid expiry month in MM/YY format.");
+      return false;
+    }
+
+    // CVV validation (simple check for 3 digits)
+    if (cvv.length !== 3 || isNaN(cvv)) {
+      alert("Please enter a valid 3-digit CVV number.");
+      return false;
+    }
+
+    return true;
+  }
+</script>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <div class="right">
+      <a href="cod.html" class="cash-on-button">Cash On Delivery</a>
+      <h3>OR</h3>
+      <h3>PAYMENT</h3>
+      <form action="cd.html" method="post" name="paymentForm" onsubmit="return validateForm()">
+        Accepted Card <br>
+        <img src="image/card1.png" width="100">
+        <img src="image/card2.png" width="50">
+        <br><br>
+
+        Credit card number
+        <input type="text" name="credit_card_number" placeholder="0000-0000-0000-0000" required>
+
+        Expiry Month & Year
+        <input type="text" name="expiry_month" placeholder="00/00" required>
+        <div id="zip">
+         
+          <label>
+            CVV
+            <input type="number" name="cvv" placeholder="xxx" required>
+          </label>
+        </div>
+        <input type="submit" name="proceed_to_checkout" value="Proceed to Checkout">
+      </form>
+    </div>
+  </div>
+</header>
+</body>
+</html>
